@@ -9,6 +9,11 @@
       filename: 'main.js',
       path: path.resolve(__dirname, 'dist')
     },
+    devServer:{
+        contentBase:"./dist",
+        open:true,
+        port:8081
+    },
     module: {
       rules: [
       {
