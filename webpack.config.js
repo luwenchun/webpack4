@@ -48,14 +48,20 @@
         new clean(),
         new htmlwebpackplugin({
         title:"bigdeal",
-        filename:'index2.html',
+        // filename:'index2.html',
         template:'./index.html'
     }),
     new mincss({
         filename:'main.css',
 
     })
+    ],
+    // devtool:"source-map",
+    // devtool:"inline-source-map",
+    //  devtool:"cheap-module-source-map",
+    //   devtool:"eval",
+     devtool:"cheap-module-eval-source-map",
+    mode:"development"
 
-]
  
   };
