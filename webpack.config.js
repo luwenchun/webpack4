@@ -2,6 +2,7 @@
   const htmlwebpackplugin= require("html-webpack-plugin")
   const clean =require("clean-webpack-plugin")
   const mincss=require("mini-css-extract-plugin")
+  const webpack =require("webpack")
 
   module.exports = {
     entry: './index.js',
@@ -13,6 +14,8 @@
         contentBase:"./dist",
         open:true,
         port:8081,
+        hot:true,
+        hotOnly:true,
         proxy:{
             "/api":{
                 target:"http://localhost:9999"
@@ -63,8 +66,8 @@
     }),
     new mincss({
         filename:'main.css',
-
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
     ],
     // devtool:"source-map",
     // devtool:"inline-source-map",
