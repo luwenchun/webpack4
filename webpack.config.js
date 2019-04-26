@@ -1,6 +1,7 @@
   const path = require('path');
   const htmlwebpackplugin= require("html-webpack-plugin")
   const clean =require("clean-webpack-plugin")
+  const mincss=require("mini-css-extract-plugin")
 
   module.exports = {
     entry: './index.js',
@@ -12,8 +13,10 @@
       rules: [
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
+        use: [{
+            loader:mincss.loader
+        },
+         
           'css-loader',
             'postcss-loader'
         ]
@@ -47,7 +50,12 @@
         title:"bigdeal",
         filename:'index2.html',
         template:'./index.html'
+    }),
+    new mincss({
+        filename:'main.css',
+
     })
+
 ]
  
   };
