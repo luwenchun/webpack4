@@ -38,11 +38,24 @@
           test: /\.js$/,
           exclude:/node_modules/,
           loader:"babel-loader",
-        //   options:{
+          options:{
         //       presets:[["@babel/preset-env",{
         //           useBuiltIns:"usage"
         //       }]]
-        //   }
+        plugins:[
+            [
+            "@babel/plugin-transform-runtime",
+            {
+                absoluteRuntime:false,
+                corejs:false,
+                helpers:true,
+                regenerator:true,
+                useESModules:false
+            }
+            ]
+        ]
+
+          }
       },
        {
         test: /\.scss$/,
