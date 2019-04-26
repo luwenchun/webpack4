@@ -17,13 +17,15 @@
         },
        {
          test: /\.(png|svg|jpg|gif)$/,
-   
-
          use: {
-            loader: "file-loader",
+            // loader: "file-loader",
+            loader: "url-loader",
             options: {
-                name:"[name].[ext]"
-            }
+                name:"[name]_[hash].[ext]",
+                 outputPath:"img11s",
+                 limit:248
+            },
+           
         }
        }
       ]
