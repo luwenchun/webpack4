@@ -1,4 +1,5 @@
   const path = require('path');
+  const htmlwebpackplugin= require("html-webpack-plugin")
 
   module.exports = {
     entry: './index.js',
@@ -38,6 +39,11 @@
         }
        }
       ]
-    }
+    },
+    plugins:[new htmlwebpackplugin({
+        title:"bigdeal",
+        filename:'index.html',
+        template:'./index.html'
+    })]
  
   };
