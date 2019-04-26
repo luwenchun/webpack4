@@ -17,7 +17,8 @@
         },
        {
          test: /\.(png|svg|jpg|gif)$/,
-        //  test:
+   
+
          use: {
             loader: "file-loader",
             options: {
