@@ -1,5 +1,6 @@
   const path = require('path');
   const htmlwebpackplugin= require("html-webpack-plugin")
+  const clean =require("clean-webpack-plugin")
 
   module.exports = {
     entry: './index.js',
@@ -40,10 +41,13 @@
        }
       ]
     },
-    plugins:[new htmlwebpackplugin({
+    plugins:[
+        new clean(),
+        new htmlwebpackplugin({
         title:"bigdeal",
-        filename:'index.html',
+        filename:'index2.html',
         template:'./index.html'
-    })]
+    })
+]
  
   };
